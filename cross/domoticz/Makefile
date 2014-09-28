@@ -20,6 +20,11 @@ INSTALL_TARGET = myInstall
 BOOST_LIBRARIES = system thread date_time
 ENV += BOOST_LIBRARIES="$(BOOST_LIBRARIES)" CMAKE_INCLUDE_PATH="$(STAGING_INSTALL_PREFIX)/include" CMAKE_LIBRARY_PATH="$(STAGING_INSTALL_PREFIX)/lib" PCH_COMPILE_FLAGS="$(CFLAGS)"
 
+# Limit to supported archs
+ifeq ($(findstring $(ARCH),88f5281 powerpc ppc824x),$(ARCH))
+$(error $(ARCH) is not a supported architecture)
+endif
+
 include ../../mk/spksrc.cross-cc.mk
 
 .PHONY: myConfigure
