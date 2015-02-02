@@ -7,7 +7,7 @@ DNAME="ZNC"
 # Others
 INSTALL_DIR="/usr/local/${PACKAGE}"
 SSS="/var/packages/${PACKAGE}/scripts/start-stop-status"
-PATH="${INSTALL_DIR}/bin:/usr/local/bin:/bin:/usr/bin:/usr/syno/bin"
+PATH="${INSTALL_DIR}/bin:${PATH}"
 USER="znc"
 GROUP="nobody"
 ZNC="${INSTALL_DIR}/bin/znc"
@@ -30,7 +30,7 @@ postinst ()
     ${INSTALL_DIR}/bin/busybox --install ${INSTALL_DIR}/bin
 
     # Create user
-    adduser -h ${INSTALL_DIR}/var -g "${DNAME} User" -G ${GROUP} -s /sbin/nologin -S -D ${USER}
+    adduser -h ${INSTALL_DIR}/var -g "${DNAME} User" -G ${GROUP} -s /bin/sh -S -D ${USER}
 
     # Edit the configuration according to the wizard
     sed -i -e "s/@username@/${wizard_username:=admin}/g" ${INSTALL_DIR}/var/configs/znc.conf
