@@ -1,6 +1,6 @@
 SPK_NAME = domoticz
-SPK_VERS = 2.0.2112
-SPK_REV = 5
+SPK_VERS = 2.0.2252
+SPK_REV = 6
 SPK_ICON = src/domoticz.png
 DSM_UI_DIR = app
 
@@ -9,10 +9,11 @@ DEPENDS = cross/busybox cross/$(SPK_NAME)
 MAINTAINER = SynoCommunity
 DESCRIPTION = Domoticz is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device.
 DESCRIPTION_FRE = Domoticz est un système domotique qui vous permet de surveiller et de configurer différents périphériques tels que: Lumières, Interrupteurs, divers capteurs/compteurs  afin de surveiller température, pluie, vent, UV, électricité, gaz, eau et bien plus encore. Notifications et alertes peuvent être envoyées à n\\\'importe quel appareil mobile.
+DESCRIPTION_RUS = Domoticz это Система Домашней Автоматизации, которая позволяет отслеживать и настраивать различные устройства, такие как: Димеры, Переключатели, различные датчики/измерители Температуры, Осадков, Ветра, УФ, Электричества, Газа, Воды и многое другое. Уведомления/Сообщения могут быть отправлены в любое мобильное устройство.
 ADMIN_PORT = 8084
 RELOAD_UI = yes
 DISPLAY_NAME = Domoticz
-CHANGELOG = "update to svn revision 2112"
+CHANGELOG = "update to svn revision 2252"
 
 HOMEPAGE = http://www.domoticz.com/
 LICENSE  = 

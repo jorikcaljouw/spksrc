@@ -76,15 +76,21 @@ preupgrade ()
     rm -fr ${TMP_DIR}/${PACKAGE}
     mkdir -p ${TMP_DIR}/${PACKAGE}
     mv ${INSTALL_DIR}/var ${TMP_DIR}/${PACKAGE}/
+    mv ${INSTALL_DIR}/scripts ${TMP_DIR}/${PACKAGE}/
 
     exit 0
 }
 
 postupgrade ()
 {
-    # Restore some stuff
+    # Restore var and scripts
     rm -fr ${INSTALL_DIR}/var
     mv ${TMP_DIR}/${PACKAGE}/var ${INSTALL_DIR}/
+    if [-d  ${TMP_DIR}/${PACKAGE}/scripts ]; then
+      rm -fr ${INSTALL_DIR}/scripts
+      mv ${TMP_DIR}/${PACKAGE}/scripts ${INSTALL_DIR}/
+    fi
+ 
     rm -fr ${TMP_DIR}/${PACKAGE}
 
     exit 0
